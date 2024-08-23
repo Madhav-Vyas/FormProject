@@ -1,0 +1,861 @@
+{
+    "sections": [
+        {
+            "id": "identity",
+            "questions": [
+                {
+                    "id": 15465,
+                    "type_id": 31,
+                    "rule_set_id": 5,
+                    "is_optional": 0,
+                    "system_identifier": "ssn",
+                    "translations": [
+                        {
+                            "data": "Social Security/Tax ID",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 5,
+                        "name": "ssn",
+                        "rules": [
+                            {
+                                "id": 5,
+                                "name": "ssn",
+                                "attribute": "digits",
+                                "values": [
+                                    {
+                                        "id": 1,
+                                        "value": "9"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 31,
+                        "name": "ssn",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15462,
+                    "type_id": 15,
+                    "rule_set_id": 18,
+                    "is_optional": 0,
+                    "system_identifier": "birthday",
+                    "translations": [
+                        {
+                            "data": "Date of birth",
+                            "language": "en"
+                        }
+                    ],
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 18,
+                        "name": "dob-from-0-to-100",
+                        "rules": [
+                            {
+                                "id": 3,
+                                "name": "date",
+                                "attribute": "date_format",
+                                "values": [
+                                    {
+                                        "id": 2,
+                                        "value": "m/d/Y"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 21,
+                                "name": "dob-from-0-to-100",
+                                "attribute": "dob",
+                                "values": [
+                                    {
+                                        "id": 18,
+                                        "value": "18"
+                                    },
+                                    {
+                                        "id": 19,
+                                        "value": "100"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 15,
+                        "name": "date",
+                        "is_generic": 0
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15464,
+                    "type_id": 13,
+                    "rule_set_id": 4,
+                    "is_optional": 0,
+                    "system_identifier": "clientsCountry",
+                    "translations": [
+                        {
+                            "data": "Citizenship",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 4,
+                        "name": "country",
+                        "rules": [
+                            {
+                                "id": 4,
+                                "name": "country",
+                                "attribute": "country",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 13,
+                        "name": "country",
+                        "is_generic": 0
+                    },
+                    "options": []
+                },
+                {
+                    "id": 99001,
+                    "type_id": 8,
+                    "rule_set_id": 2,
+                    "is_optional": 1,
+                    "system_identifier": "documentType.primary",
+                    "translations": [
+                        {
+                            "data": "Type of ID",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 1,
+                        "name": "integer",
+                        "rules": [
+                            {
+                                "id": 1,
+                                "name": "integer",
+                                "attribute": "integer",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 8,
+                        "name": "select",
+                        "is_generic": 1
+                    },
+                    "options": [
+                        {
+                            "id": 17220,
+                            "question_id": 99001,
+                            "system_identifier": "documentType.primary.passport",
+                            "position": 1,
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Passport",
+                                    "language": "en"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17221,
+                            "question_id": 99001,
+                            "system_identifier": "documentType.primary.govtId",
+                            "position": 2,
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Govt. Issued ID",
+                                    "language": "en"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17222,
+                            "question_id": 99001,
+                            "system_identifier": "documentType.primary.militaryId",
+                            "position": 3,
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Military issued ID",
+                                    "language": "en"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17223,
+                            "question_id": 99001,
+                            "system_identifier": "documentType.primary.other",
+                            "position": 4,
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Other",
+                                    "language": "en"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 15616,
+                    "type_id": 3,
+                    "rule_set_id": 14,
+                    "is_optional": 1,
+                    "system_identifier": "documents-photo-id-front-primary",
+                    "translations": [
+                        {
+                            "data": "Photo ID Front",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17220,
+                            "dependent_question_id": 15617
+                        },
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17221,
+                            "dependent_question_id": 15617
+                        },
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17222,
+                            "dependent_question_id": 15617
+                        },
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17223,
+                            "dependent_question_id": 15617
+                        }
+                    ],
+                    "rule_set": {
+                        "id": 14,
+                        "name": "document-image",
+                        "rules": [
+                            {
+                                "id": 15,
+                                "name": "image",
+                                "attribute": "image",
+                                "values": []
+                            },
+                            {
+                                "id": 16,
+                                "name": "image-mimes",
+                                "attribute": "mimes",
+                                "values": [
+                                    {
+                                        "id": 8,
+                                        "value": "jpeg"
+                                    },
+                                    {
+                                        "id": 9,
+                                        "value": "jpg"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "value": "png"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 17,
+                                "name": "image-max-size-300kb",
+                                "attribute": "max",
+                                "values": [
+                                    {
+                                        "id": 11,
+                                        "value": 300000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 3,
+                        "name": "file",
+                        "is_generic": 1
+                    },
+                    "document_type": {
+                        "id": 1,
+                        "name": "photo-id-front"
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15617,
+                    "type_id": 3,
+                    "rule_set_id": 14,
+                    "is_optional": 1,
+                    "system_identifier": "documents-photo-id-back-primary",
+                    "translations": [
+                        {
+                            "data": "Photo ID back",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17221,
+                            "dependent_question_id": 15617
+                        },
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17222,
+                            "dependent_question_id": 15617
+                        },
+                        {
+                            "parent_question_id": 99001,
+                            "parent_option_id": 17223,
+                            "dependent_question_id": 15617
+                        }
+                    ],
+                    "rule_set": {
+                        "id": 14,
+                        "name": "document-image",
+                        "rules": [
+                            {
+                                "id": 15,
+                                "name": "image",
+                                "attribute": "image",
+                                "values": []
+                            },
+                            {
+                                "id": 16,
+                                "name": "image-mimes",
+                                "attribute": "mimes",
+                                "values": [
+                                    {
+                                        "id": 8,
+                                        "value": "jpeg"
+                                    },
+                                    {
+                                        "id": 9,
+                                        "value": "jpg"
+                                    },
+                                    {
+                                        "id": 10,
+                                        "value": "png"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 17,
+                                "name": "image-max-size-300kb",
+                                "attribute": "max",
+                                "values": [
+                                    {
+                                        "id": 11,
+                                        "value": 300000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 3,
+                        "name": "file",
+                        "is_generic": 1
+                    },
+                    "document_type": {
+                        "id": 2,
+                        "name": "photo-id-back"
+                    },
+                    "options": []
+                }
+            ]
+        },
+        {
+            "id": "contact-information",
+            "questions": [
+                {
+                    "id": 15481,
+                    "type_id": 6,
+                    "is_optional": 0,
+                    "system_identifier": "home-phone",
+                    "translations": [
+                        {
+                            "data": "Home phone number",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 6,
+                        "name": "phone",
+                        "rules": [
+                            {
+                                "id": 6,
+                                "name": "phone",
+                                "attribute": "phone",
+                                "values": []
+                            },
+                            {
+                                "id": 14,
+                                "name": "usa-phone-number",
+                                "attribute": "regex",
+                                "values": [
+                                    {
+                                        "id": 7,
+                                        "value": "^([+]?1?(-?[0-9]{3})-?)?([0-9]{3})(-?[0-9]{4})$",
+                                        "error": "Phone number must be 10 digits"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15475,
+                    "type_id": 6,
+                    "rule_set_id": 23,
+                    "is_optional": 0,
+                    "system_identifier": "aiHomeAddress.line_1",
+                    "translations": [
+                        {
+                            "data": "Address Line 1",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 23,
+                        "name": "address-line",
+                        "rules": [
+                            {
+                                "id": 2,
+                                "name": "string",
+                                "attribute": "string",
+                                "values": []
+                            },
+                            {
+                                "id": 23,
+                                "name": "string-from-0-to-30-chars",
+                                "attribute": "between",
+                                "values": [
+                                    {
+                                        "id": 22,
+                                        "value": "0"
+                                    },
+                                    {
+                                        "id": 23,
+                                        "value": "30"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 17,
+                                "name": "pobox-address",
+                                "attribute": "regex",
+                                "values": [
+                                    {
+                                        "id": 7,
+                                        "value": "^(?!.*(?:(.*((p|post)[-.\\s]*(o|off|office)[-.\\s]*(box|bin)[-.\\s]*)|.*((p |post)[-.\\s]*(box|bin)[-.\\s]*)))).*$",
+                                        "error": "PO Box addresses not allowed."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15476,
+                    "type_id": 6,
+                    "is_optional": 1,
+                    "system_identifier": "aiHomeAddress.line_2",
+                    "translations": [
+                        {
+                            "data": "Address Line 2",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 23,
+                        "name": "address-line",
+                        "rules": [
+                            {
+                                "id": 2,
+                                "name": "string",
+                                "attribute": "string",
+                                "values": []
+                            },
+                            {
+                                "id": 23,
+                                "name": "string-from-0-to-30-chars",
+                                "attribute": "between",
+                                "values": [
+                                    {
+                                        "id": 22,
+                                        "value": "0"
+                                    },
+                                    {
+                                        "id": 23,
+                                        "value": "30"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15477,
+                    "type_id": 6,
+                    "rule_set_id": 2,
+                    "is_optional": 0,
+                    "system_identifier": "aiHomeAddress.city",
+                    "translations": [
+                        {
+                            "data": "City",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 2,
+                        "name": "string",
+                        "rules": [
+                            {
+                                "id": 2,
+                                "name": "string",
+                                "attribute": "string",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15480,
+                    "type_id": 6,
+                    "rule_set_id": 2,
+                    "is_optional": 0,
+                    "system_identifier": "aiHomeAddress.zipcode",
+                    "translations": [
+                        {
+                            "data": "Zip/Postal Code",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 2,
+                        "name": "string",
+                        "rules": [
+                            {
+                                "id": 2,
+                                "name": "string",
+                                "attribute": "string",
+                                "values": []
+                            },
+                            {
+                                "id": 15,
+                                "name": "usa-zip-code",
+                                "attribute": "regex",
+                                "values": [
+                                    {
+                                        "id": 7,
+                                        "value": "^[0-9]{5}-[0-9]{4}|[0-9]{5}|[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$",
+                                        "error": "Zip code format is incorrect."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15483,
+                    "type_id": 21,
+                    "rule_set_id": 1,
+                    "is_optional": 1,
+                    "system_identifier": "mailingAddressSameAsHome",
+                    "position": 11,
+                    "translations": [
+                        {
+                            "data": "Is your mailing address the same as your home address?",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 1,
+                        "name": "integer",
+                        "rules": [
+                            {
+                                "id": 1,
+                                "name": "integer",
+                                "attribute": "integer",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 21,
+                        "name": "checkbox",
+                        "is_generic": 1
+                    },
+                    "options": [
+                        {
+                            "id": 17231,
+                            "question_id": 15483,
+                            "system_identifier": "mailingAddressSameAsHome.yes",
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Yes",
+                                    "language": "en"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17232,
+                            "question_id": 15483,
+                            "system_identifier": "mailingAddressSameAsHome.no",
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "No",
+                                    "language": "en"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 15502,
+                    "type_id": 5,
+                    "rule_set_id": 1,
+                    "is_optional": 0,
+                    "system_identifier": "neighbour-yes-no",
+                    "translations": [
+                        {
+                            "data": "Do you want to add neighbour contact information?",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [],
+                    "rule_set": {
+                        "id": 1,
+                        "name": "integer",
+                        "rules": [
+                            {
+                                "id": 1,
+                                "name": "integer",
+                                "attribute": "integer",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 5,
+                        "name": "radio",
+                        "is_generic": 1
+                    },
+                    "options": [
+                        {
+                            "id": 17245,
+                            "question_id": 15502,
+                            "system_identifier": "neighbour-yes-no.yes",
+                            "position": 1,
+                            "parent_options": [],
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "Yes",
+                                    "language": "en"
+                                }
+                            ]
+                        },
+                        {
+                            "id": 17246,
+                            "question_id": 15502,
+                            "system_identifier": "neighbour-yes-no.no",
+                            "position": 2,
+                            "description": null,
+                            "alert": null,
+                            "translations": [
+                                {
+                                    "data": "No",
+                                    "language": "en"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 15506,
+                    "type_id": 6,
+                    "rule_set_id": 12,
+                    "is_optional": 0,
+                    "system_identifier": "neighbour-name-first",
+                    "position": 1,
+                    "translations": [
+                        {
+                            "data": "First name",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [
+                        {
+                            "id": 17055,
+                            "parent_question_id": 15502,
+                            "parent_option_id": 17245,
+                            "dependent_question_id": 15506
+                        }
+                    ],
+                    "rule_set": {
+                        "id": 12,
+                        "name": "name-max-20",
+                        "rules": [
+                            {
+                                "id": 2,
+                                "name": "string",
+                                "attribute": "string",
+                                "values": []
+                            },
+                            {
+                                "id": 12,
+                                "name": "max-of-20",
+                                "attribute": "max",
+                                "values": [
+                                    {
+                                        "id": 5,
+                                        "value": "20"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 14,
+                                "name": "no-special-characters",
+                                "attribute": "regex",
+                                "values": [
+                                    {
+                                        "id": 7,
+                                        "value": "/^[a-zA-Z]+[a-zA-Z ]*$/",
+                                        "error": "First name you provided is not valid. It can only contain alphabets and space."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 6,
+                        "name": "text",
+                        "is_generic": 1
+                    },
+                    "options": []
+                },
+                {
+                    "id": 15509,
+                    "type_id": 2,
+                    "rule_set_id": 8,
+                    "is_optional": 0,
+                    "system_identifier": "neighbour-email",
+                    "translations": [
+                        {
+                            "data": "Email address",
+                            "language": "en"
+                        }
+                    ],
+                    "description": null,
+                    "parent_questions": [
+                        {
+                            "id": 17049,
+                            "parent_question_id": 15502,
+                            "parent_option_id": 17245,
+                            "dependent_question_id": 15509
+                        }
+                    ],
+                    "rule_set": {
+                        "id": 8,
+                        "name": "email",
+                        "rules": [
+                            {
+                                "id": 7,
+                                "name": "email",
+                                "attribute": "email",
+                                "values": []
+                            }
+                        ]
+                    },
+                    "type": {
+                        "id": 2,
+                        "name": "email",
+                        "is_generic": 1
+                    },
+                    "options": []
+                }
+            ]
+        }
+    ]
+}
