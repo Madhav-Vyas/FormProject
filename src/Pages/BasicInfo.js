@@ -64,7 +64,7 @@ const BasicInfo = () => {
     }, [ssn, date, country, file, gender, firstName, email]);
 
     return (
-        <>
+        <div className='bg-slate-800'>
             {err && <p className='font-bold text-red-600 text-lg ml-80'>{err}</p>}
             <form
                 onSubmit={onSubmitHandler}
@@ -122,7 +122,7 @@ const BasicInfo = () => {
                 </button>
             </form>
 
-        </>
+        </div>
     );
 };
 

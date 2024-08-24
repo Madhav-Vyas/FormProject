@@ -13,7 +13,7 @@ const ContactInfo = () => {
     const navigate = useNavigate();
     const [yes, setYes] = useState(false);
     const [err, setErr] = useState("")
-    const { neighBourYes, phoneNum, address, address2, myZipCode, neighBour, neighBourFname, neighBourEmail, skill } = useData();
+    const { neighBourYes, phoneNum, address, address2, myZipCode, neighBour, neighBourFname, neighBourEmail, skill, } = useData();
     const onSubmitHandler = (e) => {
         e.preventDefault();
         if (!phoneNum || !address || !address2 || !myZipCode || !skill) {
@@ -24,7 +24,7 @@ const ContactInfo = () => {
         navigate('/form/success');
     }
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+        <div className="min-h-screen flex items-center justify-center bg-gray-800 p-6">
             <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-3xl">
                 {/* Error Message */}
                 {err && (
