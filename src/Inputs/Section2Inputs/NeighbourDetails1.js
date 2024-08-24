@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import data from '../../formConfig.json';
+import { NeighbourDetail1Data } from '../../Data/Data';
 import useData from '../../context/dataprovider';
 const NeighbourDetails1 = () => {
     const [locData, setLocData] = useState({});
@@ -9,7 +9,7 @@ const NeighbourDetails1 = () => {
 
     useEffect(() => {
 
-        setLocData(data.sections[1]?.questions[7] || {});
+        setLocData(NeighbourDetail1Data);
     }, []);
     const regPattern = locData?.rule_set?.rules[2]?.values[0]?.value || "^[a-zA-Z]+[a-zA-Z ]*$";
     const nameLength = locData?.rule_set?.rules[1]?.values[0]?.value;

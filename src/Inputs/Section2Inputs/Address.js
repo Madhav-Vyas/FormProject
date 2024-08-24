@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import data from '../../formConfig.json';
+
 import useData from '../../context/dataprovider';
+import { Address1Data } from '../../Data/Data';
 
 const Address = () => {
     const [locData, setLocData] = useState({});
     const { address, addressHandler } = useData();
 
     useEffect(() => {
-        setLocData(data.sections[1]?.questions[1] || {});
+        setLocData(Address1Data);
     }, []);
 
     return (

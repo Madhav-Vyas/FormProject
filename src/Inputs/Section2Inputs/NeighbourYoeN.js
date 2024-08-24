@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import data from '../../formConfig.json';
+import { YesOrNOQues } from '../../Data/Data';
 import useData from '../../context/dataprovider';
 
 const NeighbourYoeN = () => {
@@ -9,7 +9,7 @@ const NeighbourYoeN = () => {
 
     useEffect(() => {
 
-        setLocData(data.sections[1]?.questions[6] || {});
+        setLocData(YesOrNOQues);
     }, []);
 
 

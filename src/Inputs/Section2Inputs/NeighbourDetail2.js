@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import useData from '../../context/dataprovider'
-import data from '../../formConfig.json';
+import { NeiDetail2Data } from '../../Data/Data';
 const NeighbourDetail2 = () => {
     const [locData, setLocData] = useState({});
 
@@ -10,7 +10,7 @@ const NeighbourDetail2 = () => {
 
     useEffect(() => {
 
-        setLocData(data.sections[1]?.questions[7] || {});
+        setLocData(NeiDetail2Data);
     }, []);
     return (
         <>

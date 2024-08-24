@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import useData from '../context/dataprovider'
-import data from '../formConfig.json';
+
+import { ssnData } from '../Data/Data';
 const SSN = () => {
     const [localData, setLocaldata] = useState([]);
 
@@ -11,7 +12,7 @@ const SSN = () => {
     //console.log();
 
     useEffect(() => {
-        setLocaldata(data.sections[0].questions[0]);
+        setLocaldata(ssnData);
     }, [])
 
     console.log(localData);

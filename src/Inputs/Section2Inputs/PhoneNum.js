@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import data from '../../formConfig.json';
+import { PhoneData } from '../../Data/Data';
 import useData from '../../context/dataprovider';
 
 const PhoneNum = () => {
@@ -10,7 +10,7 @@ const PhoneNum = () => {
 
     useEffect(() => {
         // Set locData once when the component mounts
-        setLocData(data.sections[1].questions[0]);
+        setLocData(PhoneData);
     }, []);
 
     const onChangeHandler = (e) => {

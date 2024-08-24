@@ -1,14 +1,15 @@
 import React from 'react'
-import data from '../../formConfig.json';
+
 import useData from '../../context/dataprovider';
 import { useState, useEffect } from 'react';
+import { Address2Data } from '../../Data/Data';
 const Address2 = () => {
     const [locData, setLocData] = useState({});
     const { address2,
         addressHandler2 } = useData()
 
     useEffect(() => {
-        setLocData(data.sections[1]?.questions[2] || {});
+        setLocData(Address2Data);
     }, []);
     return (
         <div>

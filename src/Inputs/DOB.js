@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import data from "../formConfig.json";
 import useData from '../context/dataprovider';
+import { DobData } from '../Data/Data'
 
 const DOB = () => {
+    console.log('DOBBBBBBBBBBBBBB', DobData);
+
     const [locData, setLocData] = useState({});
     const [err, setErr] = useState('');
     const { date, dateHandler } = useData();
 
     useEffect(() => {
         // Set locData based on the JSON configuration
-        setLocData(data.sections[1]?.questions[1] || {});
+        setLocData(DobData);
     }, []);
-
+    console.log('LOcalLLLLLLLLLLLL', locData);
     const handleInputChange = (e) => {
         const selectedDate = new Date(e.target.value);
         const currentDate = new Date();

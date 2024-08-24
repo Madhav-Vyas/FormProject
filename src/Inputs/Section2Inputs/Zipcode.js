@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useData from '../../context/dataprovider';
-import data from '../../formConfig.json'; // Import the data if it's needed
+import { ZipData } from '../../Data/Data';
 
 const Zipcode = () => {
     const [locData, setLocData] = useState({});
@@ -9,7 +9,7 @@ const Zipcode = () => {
 
     useEffect(() => {
         // Ensure locData is set correctly from the imported data
-        setLocData(data.sections[1]?.questions[4] || {});
+        setLocData(ZipData);
     }, []);
 
     const onChangeHandler = (e) => {
