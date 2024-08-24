@@ -5,7 +5,7 @@ export const dataContext = createContext();
 export const Dataprovider = ({ children }) => {
     //input 1
     const [ssn, setSsn] = useState('');
-    const [ssnerr, setssnErr] = useState("")
+
     const [country, setCountry] = useState('');
     const [file, setFile] = useState(null);
     const [skill, setSkill] = useState('');
@@ -22,6 +22,59 @@ export const Dataprovider = ({ children }) => {
     const [neighBourFname, setNeighbourFname] = useState("")
     const [neighBourEmail, setNeighbourEmail] = useState("")
 
+
+    //ERORR STATE
+    const [fnameErr, setFnameErr] = useState(true);
+    const [emailErr, setEmailErr] = useState(true);
+    const [ssnerr, setSsnerr] = useState(true);
+    const [doberr, setDoberr] = useState(true);
+    const [conErr, setConErr] = useState(true);
+    const [fileErr, setFileErr] = useState(true);
+
+
+
+
+
+
+
+
+
+
+
+
+    // ERROR STATE FUNCTIONS
+    const fnameErrHandler = (val) => {
+        setFnameErr(val)
+    }
+    const emailErrHandler = (val) => {
+        setEmailErr(val);
+    }
+    const ssnErrHandler = (val) => {
+        setSsnerr(val)
+    }
+    const dobErrHandler = (val) => {
+        setDoberr(val)
+    }
+    const conErrHandler = (val) => {
+        setConErr(val)
+    }
+    const fileErrHandler = (val) => {
+        setFileErr(val)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const neighBourEmailHandler = (val) => {
         setNeighbourEmail(val)
     }
@@ -35,9 +88,7 @@ export const Dataprovider = ({ children }) => {
     const ssnHandler = (val) => {
         setSsn(val)
     }
-    const ssnErrHandler = (val) => {
-        setssnErr(val);
-    }
+
     const countryHandler = (val) => {
         setCountry(val)
     }
@@ -87,9 +138,13 @@ export const Dataprovider = ({ children }) => {
 
         country,
         countryHandler,
+        conErr,
+        conErrHandler,
 
         file,
         fileHandler,
+        fileErr,
+        fileErrHandler,
 
         skill,
         skillHandler,
@@ -99,12 +154,19 @@ export const Dataprovider = ({ children }) => {
 
         firstName,
         firstNameHandler,
+        fnameErr,
+        fnameErrHandler,
 
         email,
         emailHandler,
+        emailErr,
+        emailErrHandler,
 
         date,
         dateHandler,
+        doberr,
+        dobErrHandler,
+
 
         phoneNum,
         phoneNumHandler,

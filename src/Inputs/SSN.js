@@ -7,7 +7,8 @@ const SSN = () => {
 
     const [err, setErr] = useState('');
     const { ssn, ssnHandler,
-        ssnErrHandler } = useData();
+        ssnerr,
+        ssnErrHandler, } = useData();
 
     //console.log();
 
@@ -20,16 +21,18 @@ const SSN = () => {
     const handleInputChange = (e) => {
         const value = e.target.value;
 
-        if (value.length == localData.rule_set.rules[0].values[0].value) {
+        if (value.length < localData.rule_set.rules[0].values[0].value) {
+            setErr('SSN must be 9 digits long');
+            ssnErrHandler(true);
+
+        } else {
             setErr('');
-            ssnErrHandler('');
+            ssnErrHandler(false);
         }
-        else {
-            ssnErrHandler("SSN must be exactly 9 digits.")
-            setErr("SSN must be exactly 9 digits.")
-        }
-        ssnHandler(value)
-    }
+
+        // Always update the state
+        ssnHandler(value);
+    };
 
     return (
         <div>

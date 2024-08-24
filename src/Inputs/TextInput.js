@@ -4,17 +4,21 @@ import useData from '../context/dataprovider'
 const TextInput = () => {
     const [err, setErr] = useState("");
     const { firstName,
-        firstNameHandler } = useData()
+        firstNameHandler, fnameErr,
+        fnameErrHandler,
+    } = useData()
 
     console.log(firstName);
     const onChangehandler = (e) => {
-        if (firstName.length < 2) {
-            setErr("Name must be greater than or equal to 2 charcters")
-        }
-        else if (firstName.length === 0 || firstName.length > 1) {
+        const inputValue = e.target.value;
+        if (inputValue.length < 3) {
+            fnameErrHandler(true);
+            setErr("Name must be greater than or equal to 3 characters");
+        } else {
+            fnameErrHandler(false);
             setErr('');
         }
-        firstNameHandler(e.target.value);
+        firstNameHandler(inputValue);
     }
     return (
         <div>

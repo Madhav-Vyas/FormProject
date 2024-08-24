@@ -12,23 +12,44 @@ import useData from '../context/dataprovider';
 const BasicInfo = () => {
     const navigate = useNavigate();
     const [err, setErr] = useState("");
-    const { ssn, country, file, skill, gender, firstName, email, date, neighBourYes, ssnerr } = useData();
+    const { ssn, country, file, skill, gender, firstName, email, date, neighBourYes, ssnerr, fnameErr, emailErr, doberr,
+        conErr,
+
+
+    } = useData();
 
     // Function to check if all required fields are filled
     const isFormComplete = () => {
-        return ssn && date && country && file && gender && firstName && email;
+        return ssn && date && country && gender && firstName.length > 2 && email;
     };
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
         if (!isFormComplete()) {
             setErr("Please fill all the fields");
-
-            if (ssnerr !== '') {
-                setErr("SSN is not correct")
-            }
             return;
         }
+        else if (fnameErr === true) {
+            setErr("Please enter first name")
+            return;
+        }
+        else if (emailErr === true) {
+            setErr("Please enter E-mail")
+            return;
+        }
+        else if (doberr === true) {
+            setErr("Please enter DOB")
+            return;
+        }
+        else if (conErr === true) {
+            setErr("Please select Country")
+            return;
+        }
+        else if (!file) {
+            setErr("Please select the required file");
+            return;
+        }
+
         setErr("");
         navigate('/form/contact');
     };
@@ -84,6 +105,7 @@ const BasicInfo = () => {
 
                 {/* File Upload */}
                 <div className="mb-4">
+
                     <File />
                 </div>
 

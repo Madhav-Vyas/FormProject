@@ -15,8 +15,12 @@ const countries = [
 ]
 const Countries = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const { countryHandler, country } = useData();
+
+    const { countryHandler, country, conErr,
+        conErrHandler, } = useData();
     const filtered = countries.filter((obj) => obj.toLowerCase().includes(searchTerm.toLowerCase()));
+
+
 
     // console.log(country);
     return (
@@ -39,6 +43,7 @@ const Countries = () => {
                             onClick={() => {
                                 setSearchTerm(obj);
                                 countryHandler(obj);
+                                conErrHandler(false);
                             }}
                             className="px-3 py-2 cursor-pointer hover:bg-blue-100 text-gray-900"
                         >

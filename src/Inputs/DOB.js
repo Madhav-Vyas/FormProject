@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import useData from '../context/dataprovider';
-import { DobData } from '../Data/Data'
+import { DobData } from '../Data/Data';
 
 const DOB = () => {
-    console.log('DOBBBBBBBBBBBBBB', DobData);
-
     const [locData, setLocData] = useState({});
     const [err, setErr] = useState('');
-    const { date, dateHandler } = useData();
+    const { date, dateHandler, doberr, dobErrHandler } = useData();
 
     useEffect(() => {
-        // Set locData based on the JSON configuration
+
         setLocData(DobData);
     }, []);
-    console.log('LOcalLLLLLLLLLLLL', locData);
+
     const handleInputChange = (e) => {
         const selectedDate = new Date(e.target.value);
         const currentDate = new Date();
         let age = currentDate.getFullYear() - selectedDate.getFullYear();
         const monthDiff = currentDate.getMonth() - selectedDate.getMonth();
 
-        // Adjust age if the current date is before the selected birthdate within the same year
+
         if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < selectedDate.getDate())) {
             age--;
         }
@@ -30,7 +28,9 @@ const DOB = () => {
 
         if (age < minAge || age > maxAge) {
             setErr(`Age should be between ${minAge} and ${maxAge} years.`);
+            dobErrHandler(true);
         } else {
+            dobErrHandler(false);
             setErr('');
         }
 
@@ -39,7 +39,7 @@ const DOB = () => {
 
     return (
         <div>
-            <label htmlFor="dob">Date of Birth:</label>
+            <label htmlFor="dob" className="block text-sm font-medium text-gray-700 mb-1">Date of Birth:</label>
             <input
                 type="date"
                 name="dob"
@@ -48,7 +48,7 @@ const DOB = () => {
                 required={!locData.is_optional}
                 className="border border-gray-300 rounded-lg p-2 w-72 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
-            {err && <div style={{ color: 'red' }}>Error: {err}</div>}
+            {err && <div style={{ color: 'red', marginTop: '4px' }}>{err}</div>}
         </div>
     );
 };
